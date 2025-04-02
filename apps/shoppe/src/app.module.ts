@@ -3,8 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
-import { AppResolver } from './app.resolver';
 import { ApolloDriver } from '@nestjs/apollo';
+import { AppResolver } from './app.resolver';
+import { ComponentsModule } from './components/components.module';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
 	imports: [
@@ -15,6 +17,8 @@ import { ApolloDriver } from '@nestjs/apollo';
 			uploads: false,
 			autoSchemaFile: true,
 		}),
+		ComponentsModule,
+		DatabaseModule,
 	],
 	controllers: [AppController],
 	providers: [AppService, AppResolver],
