@@ -37,7 +37,7 @@ export class Member {
 	memberDesc?: string;
 
 	@Field(() => Int)
-	memberJewelleries?: number;
+	memberJewelleries: number;
 
 	@Field(() => Int)
 	memberArticles: number;
@@ -77,4 +77,7 @@ export class Member {
 
 	@Field(() => Date)
 	updatedAt: Date;
+
+	@Field(() => String, { nullable: true })
+	accessToken?: string;
 }
