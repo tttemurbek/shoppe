@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
 import { ViewService } from './view.service';
+import { MongooseModule } from '@nestjs/mongoose';
 import ViewSchema from '../../schemas/View.model';
 
 @Module({
@@ -9,3 +9,5 @@ import ViewSchema from '../../schemas/View.model';
 	exports: [ViewService],
 })
 export class ViewModule {}
+
+// 7-qatardagi name: "View", View ati menen schema aship bersin, oni ViewSchemaga qarap aship bersin dep atirmiz

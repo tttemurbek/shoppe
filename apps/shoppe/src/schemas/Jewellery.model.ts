@@ -36,6 +36,11 @@ const JewellerySchema = new Schema(
 			required: true,
 		},
 
+		jewelleryGram: {
+			type: Number,
+			required: true,
+		},
+
 		jewelleryViews: {
 			type: Number,
 			default: 0,
@@ -66,6 +71,11 @@ const JewellerySchema = new Schema(
 		},
 
 		jewelleryBarter: {
+			type: Boolean,
+			default: false,
+		},
+
+		jewelleryRent: {
 			type: Boolean,
 			default: false,
 		},
