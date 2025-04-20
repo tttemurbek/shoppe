@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/shoppe/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/shoppe/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/shoppe",
+  "projects": {
+    "shoppe": {
+      "type": "application",
+      "root": "apps/shoppe",
+      "entryFile": "main",
+      "sourceRoot": "apps/shoppe/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/shoppe/tsconfig.app.json"
+      }
+    },
+    "shoppe-batch": {
+      "type": "application",
+      "root": "apps/shoppe-batch",
+      "entryFile": "main",
+      "sourceRoot": "apps/shoppe-batch/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/shoppe-batch/tsconfig.app.json"
+      }
+    }
   }
 }
