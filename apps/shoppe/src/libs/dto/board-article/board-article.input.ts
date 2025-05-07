@@ -17,7 +17,7 @@ export class BoardArticleInput {
 	articleTitle: string;
 
 	@IsNotEmpty()
-	@Length(3, 250)
+	@Length(3, 25000)
 	@Field(() => String)
 	articleContent: string;
 

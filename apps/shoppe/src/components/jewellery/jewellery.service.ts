@@ -170,7 +170,7 @@ export class JewelleryService {
 		const { jewelleryStatus } = input.search;
 		console.log('jewellery.service.ts getAgentJewelleries', input);
 
-		if (jewelleryStatus === JewelleryStatus.RESERVED) throw new BadRequestException(Message.NOT_ALLOWED_REQUEST);
+		if (jewelleryStatus === JewelleryStatus.OUT_OF_STOCK) throw new BadRequestException(Message.NOT_ALLOWED_REQUEST);
 
 		const match: T = {
 			memberId: memberId,

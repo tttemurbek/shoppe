@@ -38,7 +38,7 @@ export class JewelleryInput {
 	jewelleryImages: string[];
 
 	@IsOptional()
-	@Length(5, 500)
+	@Length(5, 2500)
 	@Field(() => String, { nullable: true })
 	jewelleryDesc?: string;
 

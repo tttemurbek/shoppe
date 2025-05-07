@@ -17,6 +17,7 @@ export class MemberInput {
 	memberPassword: string;
 
 	@IsNotEmpty()
+	@Length(5, 13)
 	@Field(() => String)
 	memberPhone: string;
 
