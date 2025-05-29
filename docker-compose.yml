@@ -1,0 +1,38 @@
+version: '3.3'
+
+services:
+  shoppe-api:
+    container_name: shoppe-api
+    restart: always
+    image: node:20.10.0
+    ports:
+      - 5001:3007
+    volumes:
+      - ./:/usr/src/shoppe
+    working_dir: /usr/src/shoppe
+
+    networks:
+      - monorepo-network
+
+      # FOR PRODUCTION
+    command: bash -c "npm install && npm run build && npm run start:prod"
+
+  shoppe-batch:
+    container_name: shoppe-batch
+    restart: always
+    image: node:20.10.0
+    ports:
+      - 5002:3008
+    volumes:
+      - ./:/usr/src/shoppe
+    working_dir: /usr/src/shoppe
+
+    networks:
+      - monorepo-network
+
+      # FOR PRODUCTION
+    command: bash -c "npm install && npm run build && npm run start:prod:batch"
+
+networks:
+  monorepo-network:
+    driver: bridge
