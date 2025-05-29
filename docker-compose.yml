@@ -19,7 +19,7 @@ services:
 
   shoppe-batch:
     container_name: shoppe-batch
-    restart: always
+    restart: unless-stopped
     image: node:20.10.0
     ports:
       - 5002:3008
